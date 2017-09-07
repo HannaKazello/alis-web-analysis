@@ -1,0 +1,6 @@
+library(mongolite)
+mongo <- mongo(collection="books", db="test", url="mongodb://localhost")
+ids <- mongo$find(query='{}', fields='{"_id": 0, "id": 1}')
+nrow(ids)
+summary(ids)
+plot(ids)
